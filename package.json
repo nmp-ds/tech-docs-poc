@@ -1,0 +1,34 @@
+{
+  "name": "fabric-docs-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "prebuild": "npm run shim",
+    "build": "vitepress build docs",
+    "shim": "mkdir -p ./docs/shims && npm run shim:copy",
+    "shim:copy": "cp node_modules/@fabric-ds/vue/dist/docs/* ./docs/shims/."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@fabric-ds/vue": "^0.12.6",
+    "markdown-it": "^13.0.1",
+    "vitepress": "1.0.0-alpha.35"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@types/react",
+        "react",
+        "react-dom"
+      ]
+    }
+  },
+  "dependencies": {
+    "@fabric-ds/css": "^1.1.6",
+    "@fabric-ds/icons": "^0.4.3"
+  }
+}
